@@ -1,33 +1,121 @@
-category,distance,duration,nearby_places,title,url,p_rating,count,itemId
- Wildlife,6 Kms,1-2 Hours,None,Jaipur Zoo,/rajasthan/jaipur/jaipur-zoo,2.2,158,1
- Heritage,6 Kms,1-2 Hours,None,Nahargarh Fort,/rajasthan/jaipur/nahargarh-fort,4.6,652,2
- Heritage,13 Kms,2-3 Hours,"Jaigarh Fort (1 km by walk), Srijagat Siromaniji Temple (500m), Panna Meena ka Kund (1 km) & Jama Masjid / Akbari Mosque - Amer (1 km) are sitauted near Amer Fort and can be visited together.",Amer Fort / Amber Fort,/rajasthan/jaipur/amer-fort-amber-fort,5,783,3
- Pilgrimage,6 Kms,1-2 Hours,None,Birla Mandir,/rajasthan/jaipur/birla-mandir,4.9,482,4
- Heritage,6 Kms,30 Mins,None,Hawa Mahal,/rajasthan/jaipur/hawa-mahal,4.2,890,5
- Heritage,9 Kms,30 Mins,None,Maharani Ki Chhatri,/rajasthan/jaipur/maharani-ki-chhatri,1.9,656,6
- Pilgrimage,6 Kms,30 Mins,None,Moti Dungri Ganesh Temple,/rajasthan/jaipur/moti-dungri-ganesh-temple,4.5,350,7
- Park,11 Kms,1 Hour,None,Kanak Vrindavan Garden,/rajasthan/jaipur/kanak-vrindavan-garden,2,700,8
- Heritage,5.5 Kms,1-2 Hours,"Hawa Mahal (One the edge of City Palace), Jantar Mantar (adjacent to City Palace), Govind Devji Temple (Inside City Palace Complex), Sargasuli Tower / Isar Lat (Near Tripolia Gate of City Palace) can be visited along with City Palace.",City Palace / Sawai Man Singh II Museum,/rajasthan/jaipur/city-palace-sawai-man-singh-ii-museum,3.2,25,9
- Pilgrimage,6.5 Kms,1-2 Hours,None,Akshardham Temple,/rajasthan/jaipur/akshardham-temple,5,345,10
- Heritage,14 Kms,30 Mins,None,Panna Meena Ka Kund,/rajasthan/jaipur/panna-meena-ka-kund,4.8,120,11
- Heritage,5.5 Kms,1 Hour,This is UNESCO World Heritage Site,Jantar Mantar,/rajasthan/jaipur/jantar-mantar,1.5,456,12
- Pilgrimage,11 Kms,1-2 Hours,None,Khole Ke Hanuman Ji Temple,/rajasthan/jaipur/khole-ke-hanuman-ji-temple,3.5,990,13
-" Heritage, Museum",6 Kms,1-2 Hours,None,Albert Hall Museum,/rajasthan/jaipur/albert-hall-museum,4,222,14
- Pilgrimage,7 Kms,30 Mins,None,Garh Ganesh Temple,/rajasthan/jaipur/garh-ganesh-temple,1.5,43,15
- Heritage,11 Kms,1 Hour,"Maharani ki Chhatri (1 km from Jal Mahal), Kanak Vrindavan Garden (1 km from Jal Mahal) can be visited along with Jal Mahal.",Jal Mahal,/rajasthan/jaipur/jal-mahal,4.2,678,16
-" Heritage, Pilgrimage",13.5 Kms,30 Mins,None,Jama Masjid / Akbari Mosque - Amer,/rajasthan/jaipur/jama-masjid-akbari-mosque-amer,2,789,17
- Heritage,6 Kms,1 Hour,"This is currently a private hotel, but visitors are allowed to take a tour of the palace.",Rambagh Palace,/rajasthan/jaipur/rambagh-palace,3.2,567,18
- Park,4 Kms,1 Hour,None,Central Park,/rajasthan/jaipur/central-park,3.8,245,19
- Heritage,15 Kms,1-2 Hours,This is usually visited from Amer Fort (1 km by walk),Jaigarh Fort,/rajasthan/jaipur/jaigarh-fort,4.5,890,20
- Park,13 Kms,1-2 Hours,None,Jawahar Circle Garden,/rajasthan/jaipur/jawahar-circle-garden,4.2,13,21
- Heritage,7 Kms,1 Hour,None,Gatore ki Chhatriyan,/rajasthan/jaipur/maharaja-ki-chhatri-gaitor,1,123,22
- Heritage,4 Kms,30 Mins,None,Statue Circle / Sawai Jai Singh Circle,/rajasthan/jaipur/statue-circle-sawai-jai-singh-circle,5,67,23
- Pilgrimage,14 Kms,2 Hours,None,ISKCON Temple,/rajasthan/jaipur/iskcon-temple,3.9,412,24
- Heritage,40 Kms,4 Hours/Half Day,None,Samode Palace / Samode Bagh,/rajasthan/jaipur/samode-palace-samode-bagh,4.8,25,25
- Heritage,5 Kms,15 Mins or Less,None,Sargasuli Tower / Isar Lat,/rajasthan/jaipur/sargasuli-tower-isar-lat,3.5,654,26
-" Heritage, Pilgrimage",14 Kms,30 Mins,None,Srijagat Siromaniji Temple,/rajasthan/jaipur/srijagat-siromaniji-temple,2.9,134,27
- Museum,14 Kms,2 Hours,None,Anokhi Museum Of Hand Printing,/rajasthan/jaipur/anokhi-museum-of-hand-printing,1.7,560,28
- Heritage,5 Kms,30 Mins,None,Amar Jawan Jyoti,/rajasthan/jaipur/amar-jawan-jyoti,5,348,29
-" Heritage, Pilgrimage",14.5 Kms,2 Hours,None,Digamber Jain Mandir Sanghiji,/rajasthan/jaipur/digamber-jain-mandir-sanghiji,3.7,48,30
-" Heritage, Pilgrimage",7 Kms,30 Mins,None,Govind Devji Temple,/rajasthan/jaipur/govind-devji-temple,1.5,654,31
- Museum,1 Kms,1 Hour,None,SRC Museum Of Indology,/rajasthan/jaipur/src-museum-of-indology,4.2,56,32
+itemId,title,category,distance,duration,nearby_places,url,p_rating,count,latitude,longitude,image_url
+1,Hawa Mahal,Heritage,2 Km,30 min,City Palace,/rajasthan/jaipur/hawa-mahal,4.9,892,26.9245,75.8281,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+2,City Palace,Heritage,0 km,1-2 hrs,Hawa Mahal,/rajasthan/jaipur/city-palace,4.8,645,26.9245,75.8274,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+3,Jantar Mantar,Heritage,0 km,1-2 hrs,City Palace,/rajasthan/jaipur/jantar-mantar,4.7,723,26.9245,75.8341,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+4,Amer Fort,Heritage,13 km,2-3 hrs,Jaigarh Fort,/rajasthan/jaipur/amer-fort,5.0,783,26.9857,75.8513,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+5,Nahargarh Fort,Heritage,6 km,1-2 hrs,City view,/rajasthan/jaipur/nahargarh-fort,4.6,652,27.0089,75.8533,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+6,Jaipur Zoo,Wildlife,6 km,1-2 hrs,None,/rajasthan/jaipur/jaipur-zoo,4.2,358,26.9124,75.8231,https://images.unsplash.com/photo-1540573133985-87b6da164588?w=800&q=80
+7,Birla Mandir,Pilgrimage,6 km,1-2 hrs,None,/rajasthan/jaipur/birla-mandir,4.9,482,26.9288,75.8234,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+8,Jaigarh Fort,Heritage,15 km,2-3 hrs,Amer Fort,/rajasthan/jaipur/jaigarh-fort,4.6,534,26.9918,75.8289,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+9,Albert Hall Museum,Museum,5 km,1-2 hrs,None,/rajasthan/jaipur/albert-hall-museum,4.4,345,26.9294,75.8144,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+10,Ram Niwas Garden,Park,3 km,1-2 hrs,Albert Hall,/rajasthan/jaipur/ram-niwas-garden,4.3,267,26.9225,75.8169,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+11,Red Fort,Heritage,5 km,2-3 hrs,Jama Masjid,/delhi/delhi/red-fort,4.8,1023,28.6562,77.241,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+12,India Gate,Monument,3 km,1 hr,Rashtrapati,/delhi/delhi/india-gate,4.7,1203,28.6129,77.2295,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+13,Qutub Minar,Heritage,15 km,2 hrs,Qutub Complex,/delhi/delhi/qutub-minar,4.9,923,28.5244,77.1855,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+14,Lotus Temple,Pilgrimage,12 km,1-2 hrs,None,/delhi/delhi/lotus-temple,4.8,734,28.5535,77.2588,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+15,Jama Masjid,Pilgrimage,1 km,1-2 hrs,Red Fort,/delhi/delhi/jama-masjid,4.7,612,28.6505,77.2308,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+16,Rashtrapati Bhavan,Monument,2 km,1 hr,India Gate,/delhi/delhi/rashtrapati-bhavan,4.6,534,28.6238,77.1992,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+17,Humayun Tomb,Heritage,8 km,1-2 hrs,None,/delhi/delhi/humayun-tomb,4.8,645,28.5921,77.2506,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+18,Chandni Chowk,Market,2 km,2-3 hrs,Red Fort,/delhi/delhi/chandni-chowk,4.4,723,28.6505,77.2291,https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80
+19,National Museum,Museum,3 km,2-3 hrs,India Gate,/delhi/delhi/national-museum,4.5,456,28.611,77.2205,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+20,Delhi Zoo,Wildlife,5 km,2-3 hrs,None,/delhi/delhi/delhi-zoo,4.3,567,28.6145,77.2449,https://images.unsplash.com/photo-1540573133985-87b6da164588?w=800&q=80
+21,Gateway of India,Monument,0 km,1 hr,Taj Palace,/maharashtra/mumbai/gateway-of-india,4.7,1534,18.922,72.8347,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+22,Marine Drive,Beach,5 km,1-2 hrs,Chowpatty,/maharashtra/mumbai/marine-drive,4.6,823,18.9432,72.8236,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+23,Haji Ali,Pilgrimage,8 km,1-2 hrs,None,/maharashtra/mumbai/haji-ali,4.5,678,18.9825,72.8043,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+24,Chowpatty Beach,Beach,3 km,1-2 hrs,Marine Drive,/maharashtra/mumbai/chowpatty-beach,4.4,534,18.9432,72.8256,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+25,Siddhivinayak Temple,Pilgrimage,6 km,1 hr,None,/maharashtra/mumbai/siddhivinayak-temple,4.8,723,19.0176,72.8263,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+26,Elephanta Caves,Heritage,12 km,3-4 hrs,None,/maharashtra/mumbai/elephanta-caves,4.7,612,18.9634,72.9314,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+27,Bandra-Worli Sea Link,Monument,10 km,30 min,None,/maharashtra/mumbai/bandra-worli-sea-link,4.5,456,19.026,72.8235,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+28,St. Basil Cathedral,Heritage,2 km,1 hr,None,/maharashtra/mumbai/st.-basil-cathedral,4.6,378,18.9633,72.8285,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+29,Worli Fort,Heritage,8 km,1 hr,None,/maharashtra/mumbai/worli-fort,4.3,289,19.0031,72.8144,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+30,Mani Bhavan,Heritage,4 km,1 hr,None,/maharashtra/mumbai/mani-bhavan,4.4,312,19.0233,72.8277,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+31,Taj Mahal,Heritage,0 km,2-3 hrs,Agra Fort,/uttar-pradesh/agra/taj-mahal,5.0,2103,27.1751,78.0421,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+32,Agra Fort,Heritage,2 km,1-2 hrs,Taj Mahal,/uttar-pradesh/agra/agra-fort,4.8,734,27.1805,78.0081,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+33,Itimad-ud-Daulah,Heritage,5 km,1-2 hrs,Taj Mahal,/uttar-pradesh/agra/itimad-ud-daulah,4.6,523,27.1896,78.0213,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+34,Mehtab Bagh,Garden,3 km,1 hr,Taj Mahal,/uttar-pradesh/agra/mehtab-bagh,4.5,412,27.1905,78.0598,https://images.unsplash.com/photo-1585320806997-c6ff46f1fc1f?w=800&q=80
+35,Fatehpur Sikri,Heritage,35 km,3-4 hrs,None,/uttar-pradesh/agra/fatehpur-sikri,4.7,634,27.0929,77.8794,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+36,Akbars Tomb,Heritage,9 km,1-2 hrs,None,/uttar-pradesh/agra/akbars-tomb,4.3,289,27.0645,78.0234,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+37,Mariam Mosque,Pilgrimage,4 km,45 min,None,/uttar-pradesh/agra/mariam-mosque,4.4,178,27.1912,78.0087,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+38,Etah Sanctuary,Wildlife,30 km,2-3 hrs,None,/uttar-pradesh/agra/etah-sanctuary,4.2,234,26.9823,77.8934,https://images.unsplash.com/photo-1540573133985-87b6da164588?w=800&q=80
+39,Chini ka Rauza,Heritage,6 km,1 hr,None,/uttar-pradesh/agra/chini-ka-rauza,4.2,156,27.1834,78.0456,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+40,Khas Mahal,Heritage,2 km,1 hr,Agra Fort,/uttar-pradesh/agra/khas-mahal,4.4,267,27.1808,78.0095,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+41,Baga Beach,Beach,0 km,2-4 hrs,Calangute,/goa/goa/baga-beach,4.5,456,15.5855,73.7314,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+42,Basilica of Bom Jesus,Pilgrimage,10 km,1-2 hrs,Se Cathedral,/goa/goa/basilica-of-bom-jesus,4.8,567,15.4909,73.8256,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+43,Calangute Beach,Beach,2 km,2-3 hrs,Baga,/goa/goa/calangute-beach,4.4,378,15.5581,73.7371,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+44,Fort Aguada,Heritage,15 km,1-2 hrs,None,/goa/goa/fort-aguada,4.6,423,15.4922,73.7631,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+45,Palolem Beach,Beach,60 km,3-4 hrs,None,/goa/goa/palolem-beach,4.7,534,14.9309,73.9764,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+46,Dudhsagar Falls,Nature,55 km,4-5 hrs,None,/goa/goa/dudhsagar-falls,4.8,645,15.3,74.0361,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80
+47,Se Cathedral,Pilgrimage,12 km,1 hr,Basilica,/goa/goa/se-cathedral,4.5,389,15.4972,73.827,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+48,Old Goa,Heritage,10 km,2-3 hrs,Basilica,/goa/goa/old-goa,4.6,423,15.5033,73.8298,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+49,Colem Beach,Beach,50 km,3-4 hrs,None,/goa/goa/colem-beach,4.3,267,14.9427,74.005,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+50,Miramar Beach,Beach,5 km,1-2 hrs,None,/goa/goa/miramar-beach,4.2,198,15.5017,73.8328,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+51,Victoria Memorial,Monument,2 km,1-2 hrs,St Paul,/west-bengal/kolkata/victoria-memorial,4.7,645,22.5448,88.3426,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+52,Howrah Bridge,Monument,3 km,30 min,Dakshineswar,/west-bengal/kolkata/howrah-bridge,4.6,723,22.5865,88.3621,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+53,Dakshineswar Temple,Pilgrimage,8 km,1-2 hrs,None,/west-bengal/kolkata/dakshineswar-temple,4.8,512,22.6194,88.3704,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+54,Indian Museum,Museum,1 km,2-3 hrs,Victoria,/west-bengal/kolkata/indian-museum,4.5,378,22.5512,88.367,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+55,Jorasanko Tagore House,Heritage,2 km,1 hr,None,/west-bengal/kolkata/jorasanko-tagore-house,4.4,234,22.5743,88.3606,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+56,Kalighat Temple,Pilgrimage,3 km,1-2 hrs,None,/west-bengal/kolkata/kalighat-temple,4.6,456,22.5149,88.3631,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+57,St. Paul Cathedral,Pilgrimage,1.5 km,1 hr,Victoria,/west-bengal/kolkata/st.-paul-cathedral,4.5,289,22.5435,88.3557,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+58,Belur Math,Pilgrimage,10 km,1-2 hrs,None,/west-bengal/kolkata/belur-math,4.7,378,22.6508,88.3918,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+59,Marble Palace,Heritage,1 km,1 hr,None,/west-bengal/kolkata/marble-palace,4.4,267,22.5667,88.3722,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+60,Nakhoda Mosque,Pilgrimage,2 km,1 hr,None,/west-bengal/kolkata/nakhoda-mosque,4.3,198,22.5766,88.3749,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+61,Vidhana Soudha,Heritage,3 km,1 hr,Cubbon Park,/karnataka/bangalore/vidhana-soudha,4.6,534,13.1939,77.5963,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+62,Lal Bagh,Garden,5 km,1-2 hrs,Cubbon,/karnataka/bangalore/lal-bagh,4.5,612,13.1771,77.5947,https://images.unsplash.com/photo-1585320806997-c6ff46f1fc1f?w=800&q=80
+63,Cubbon Park,Park,2 km,1-2 hrs,Vidhana,/karnataka/bangalore/cubbon-park,4.4,678,13.192,77.6006,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+64,Tipu Sultan Palace,Heritage,4 km,1 hr,None,/karnataka/bangalore/tipu-sultan-palace,4.5,423,13.205,77.6313,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+65,Bangalore Fort,Heritage,6 km,1-2 hrs,None,/karnataka/bangalore/bangalore-fort,4.3,345,13.2023,77.6235,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+66,ISKCON Temple,Pilgrimage,8 km,1-2 hrs,None,/karnataka/bangalore/iskcon-temple,4.7,512,12.9667,77.6667,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+67,Bull Temple,Pilgrimage,5 km,45 min,None,/karnataka/bangalore/bull-temple,4.4,289,13.1667,77.55,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+68,Nandi Hills,Nature,60 km,3-4 hrs,None,/karnataka/bangalore/nandi-hills,4.8,834,13.335,77.475,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80
+69,Bannerghatta National Park,Wildlife,25 km,4-5 hrs,None,/karnataka/bangalore/bannerghatta-national-park,4.6,645,12.8333,77.6,https://images.unsplash.com/photo-1540573133985-87b6da164588?w=800&q=80
+70,Jayadeva Lake,Park,10 km,1 hr,None,/karnataka/bangalore/jayadeva-lake,4.2,178,13.0917,77.5833,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+71,Charminar,Monument,0 km,1 hr,Laad Bazaar,/telangana/hyderabad/charminar,4.7,834,17.3608,78.4734,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+72,Golconda Fort,Heritage,11 km,2-3 hrs,None,/telangana/hyderabad/golconda-fort,4.8,723,17.3757,78.405,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+73,Mecca Masjid,Pilgrimage,1 km,45 min,Charminar,/telangana/hyderabad/mecca-masjid,4.6,378,17.3676,78.4705,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+74,Laad Bazaar,Market,0 km,1-2 hrs,Charminar,/telangana/hyderabad/laad-bazaar,4.3,456,17.3614,78.4685,https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80
+75,Hussain Sagar Lake,Park,3 km,1 hr,None,/telangana/hyderabad/hussain-sagar-lake,4.4,534,17.3773,78.4733,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+76,Chowmahalla Palace,Heritage,2 km,1-2 hrs,None,/telangana/hyderabad/chowmahalla-palace,4.5,423,17.3662,78.4756,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+77,Salar Jung Museum,Museum,3 km,2-3 hrs,None,/telangana/hyderabad/salar-jung-museum,4.6,345,17.3667,78.46,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+78,Ramakrishna Math,Pilgrimage,5 km,1 hr,None,/telangana/hyderabad/ramakrishna-math,4.5,267,17.4,78.5,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+79,NTR Gardens,Park,2 km,1 hr,Hussain Sagar,/telangana/hyderabad/ntr-gardens,4.2,198,17.3877,78.4767,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+80,Lumbini Park,Park,4 km,1 hr,None,/telangana/hyderabad/lumbini-park,4.3,212,17.36,78.47,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+81,Kashi Vishwanath Temple,Pilgrimage,0 km,1-2 hrs,Ghat,/uttar-pradesh/varanasi/kashi-vishwanath-temple,4.9,956,25.3244,82.9789,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+82,Dashashwamedh Ghat,Pilgrimage,0 km,1-2 hrs,Kashi,/uttar-pradesh/varanasi/dashashwamedh-ghat,4.8,634,25.323,82.9856,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+83,Manikarnika Ghat,Pilgrimage,0.5 km,1 hr,Dashashwamedh,/uttar-pradesh/varanasi/manikarnika-ghat,4.7,512,25.3213,82.9889,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+84,Assi Ghat,Pilgrimage,5 km,1 hr,None,/uttar-pradesh/varanasi/assi-ghat,4.5,423,25.2894,83.0106,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+85,Benares Hindu University,Heritage,10 km,2-3 hrs,None,/uttar-pradesh/varanasi/benares-hindu-university,4.6,378,25.2683,82.9889,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+86,Bharat Kala Bhavan,Museum,8 km,2 hrs,BHU,/uttar-pradesh/varanasi/bharat-kala-bhavan,4.4,267,25.2683,82.9889,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+87,Alamgir Mosque,Pilgrimage,1 km,30 min,Manikarnika,/uttar-pradesh/varanasi/alamgir-mosque,4.3,198,25.3186,82.9867,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+88,Sankat Mochan Temple,Pilgrimage,3 km,1 hr,None,/uttar-pradesh/varanasi/sankat-mochan-temple,4.5,289,25.3167,83.0083,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+89,Durga Temple,Pilgrimage,4 km,1 hr,None,/uttar-pradesh/varanasi/durga-temple,4.4,212,25.3211,82.9917,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+90,Tulsi Manas Temple,Pilgrimage,2 km,45 min,None,/uttar-pradesh/varanasi/tulsi-manas-temple,4.3,156,25.3298,83.0078,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+91,Golden Temple,Pilgrimage,0 km,2-3 hrs,Jallianwala,/punjab/amritsar/golden-temple,4.9,1123,31.617,74.8765,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+92,Jallianwala Bagh,Heritage,1 km,1 hr,Golden Temple,/punjab/amritsar/jallianwala-bagh,4.7,534,31.624,74.8717,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+93,Wagah Border,Monument,30 km,2-3 hrs,None,/punjab/amritsar/wagah-border,4.6,812,31.7097,74.5964,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+94,Akal Takht,Pilgrimage,0 km,1 hr,Golden Temple,/punjab/amritsar/akal-takht,4.8,423,31.617,74.8765,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+95,Partition Museum,Museum,2 km,1-2 hrs,None,/punjab/amritsar/partition-museum,4.5,267,31.6282,74.8722,https://images.unsplash.com/photo-1564766809919-ab7c9ab60908?w=800&q=80
+96,Ram Bagh,Park,2 km,1 hr,None,/punjab/amritsar/ram-bagh,4.2,178,31.644,74.8614,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+97,Katra Ahluwalia,Heritage,1 km,45 min,None,/punjab/amritsar/katra-ahluwalia,4.3,145,31.6262,74.8705,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+98,Durgiana Temple,Pilgrimage,2 km,1 hr,None,/punjab/amritsar/durgiana-temple,4.4,189,31.6378,74.8686,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+99,Langar,Pilgrimage,0 km,1-2 hrs,Golden Temple,/punjab/amritsar/langar,4.7,345,31.617,74.8765,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+100,Sri Guru Harmandir Sahib,Pilgrimage,0 km,1 hr,Golden Temple,/punjab/amritsar/sri-guru-harmandir-sahib,4.8,312,31.617,74.8765,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+101,Backwaters,Beach,0 km,2-4 hrs,None,/kerala/alleppey/backwaters,4.8,845,9.4981,76.3388,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+102,Houseboat Ride,Beach,5 km,2-3 hrs,Backwaters,/kerala/alleppey/houseboat-ride,4.7,712,9.5,76.34,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+103,Alleppey Beach,Beach,2 km,1-2 hrs,Backwaters,/kerala/alleppey/alleppey-beach,4.5,434,9.4878,76.3228,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+104,Krishnapuram Palace,Heritage,10 km,1-2 hrs,None,/kerala/alleppey/krishnapuram-palace,4.4,278,9.45,76.25,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+105,Pathiramanal Island,Nature,8 km,1 hr,None,/kerala/alleppey/pathiramanal-island,4.3,156,9.52,76.31,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80
+106,Vembanad Lake,Park,3 km,1 hr,Backwaters,/kerala/alleppey/vembanad-lake,4.4,234,9.5,76.35,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80
+107,Alleppey Lighthouse,Monument,2 km,30 min,Beach,/kerala/alleppey/alleppey-lighthouse,4.2,198,9.4867,76.3267,https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&q=80
+108,St. Mary Church,Pilgrimage,1 km,45 min,None,/kerala/alleppey/st.-mary-church,4.3,145,9.5,76.34,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+109,Ayurvedic Resort,Heritage,3 km,1-2 hrs,None,/kerala/alleppey/ayurvedic-resort,4.5,389,9.51,76.32,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+110,Boat Club,Beach,1 km,1 hr,Backwaters,/kerala/alleppey/boat-club,4.3,167,9.495,76.335,https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80
+111,Fort Kochi,Heritage,10 km,1-2 hrs,Chinese Fishing Nets,/kerala/kochi/fort-kochi,4.6,612,9.9689,76.243,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+112,Chinese Fishing Nets,Heritage,12 km,1 hr,Fort Kochi,/kerala/kochi/chinese-fishing-nets,4.7,534,9.96,76.244,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+113,Mattancherry Palace,Heritage,2 km,1 hr,Jewish Synagogue,/kerala/kochi/mattancherry-palace,4.5,378,9.9683,76.266,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+114,Jewish Synagogue,Pilgrimage,2 km,45 min,Mattancherry,/kerala/kochi/jewish-synagogue,4.4,267,9.9694,76.2676,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+115,Paradesi Synagogue,Pilgrimage,2 km,45 min,None,/kerala/kochi/paradesi-synagogue,4.3,198,9.97,76.268,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+116,Kathakali Dance,Heritage,5 km,1 hr,None,/kerala/kochi/kathakali-dance,4.6,456,9.97,76.25,https://images.unsplash.com/photo-1571882396888-b5ff4e6a2106?w=800&q=80
+117,St. Francis Church,Pilgrimage,11 km,1 hr,Fort Kochi,/kerala/kochi/st.-francis-church,4.5,289,9.9667,76.245,https://images.unsplash.com/photo-1599427235105-6fe7d15e20f2?w=800&q=80
+118,Jew Town,Market,2 km,1-2 hrs,Synagogue,/kerala/kochi/jew-town,4.4,345,9.969,76.267,https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80
+119,Spice Market,Market,3 km,1-2 hrs,Kashi Art Cafe,/kerala/kochi/spice-market,4.3,267,9.97,76.26,https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80
+120,Bolghatty Island,Park,5 km,1-2 hrs,None,/kerala/kochi/bolghatty-island,4.2,156,10.01,76.24,https://images.unsplash.com/photo-1585400172013-8918e900eb62?w=800&q=80

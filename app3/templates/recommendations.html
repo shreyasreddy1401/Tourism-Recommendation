@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Recommendations - Tourism App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFA500 50%, #FFD700 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+        
+        .error-box {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .filter-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-info p {
+            color: #333;
+            margin: 5px 0;
+        }
+        
+        .filter-info strong {
+            color: #FF6B6B;
+        }
+        
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .recommendation-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFA500 100%);
+        }
+        
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .card-category {
+            display: inline-block;
+            background: #FFE5E0;
+            color: #FF6B6B;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        
+        .card-details {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .detail-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: start;
+        }
+        
+        .detail-icon {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+        
+        .card-footer {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .rating-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .predicted-rating {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #FF6B6B;
+        }
+        
+        .actual-rating {
+            color: #ffa500;
+            font-weight: 600;
+        }
+        
+        .view-map {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFA500 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .view-map:hover {
+            transform: scale(1.05);
+        }
+        
+        .empty-state {
+            text-align: center;
+            background: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+            color: #666;
+        }
+        
+        .empty-state-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Search</a>
+        
+        <header>
+            <h1>✨ Your Recommendations</h1>
+        </header>
+        
+        {% if error %}
+        <div class="error-box">
+            <strong>⚠️ Error:</strong> {{ error }}
+        </div>
+        {% endif %}
+        
+        {% if recommendations %}
+        <div class="filter-info">
+            <p><strong>User:</strong> User ID #{{ user_id }}</p>
+            {% if city_filter %}
+            <p><strong>City Filter:</strong> {{ city_filter.title() }}</p>
+            {% endif %}
+            <p><strong>Total Recommendations:</strong> {{ recommendations|length }}</p>
+        </div>
+        
+        <div class="recommendations-grid">
+            {% for rec in recommendations %}
+            <div class="recommendation-card">
+                <img src="{{ rec.image_url }}" alt="{{ rec.title }}" class="card-image" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                
+                <div class="card-content">
+                    <div class="card-title">{{ rec.title }}</div>
+                    <span class="card-category">{{ rec.category }}</span>
+                    
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span><strong>Distance:</strong> {{ rec.distance }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏱️</span>
+                            <span><strong>Duration:</strong> {{ rec.duration }}</span>
+                        </div>
+                        {% if rec.nearby_places != 'None' %}
+                        <div class="detail-item">
+                            <span class="detail-icon">🏛️</span>
+                            <span><strong>Nearby:</strong> {{ rec.nearby_places }}</span>
+                        </div>
+                        {% endif %}
+                        <div class="detail-item">
+                            <span class="detail-icon">⭐</span>
+                            <span><strong>Rating:</strong> {{ rec.p_rating }}/5 ({{ rec.count }} reviews)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🗺️</span>
+                            <span><strong>Location:</strong> {{ rec.latitude|round(4) }}, {{ rec.longitude|round(4) }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="rating-box">
+                            <span class="predicted-rating">Score: {{ (rec.predicted_rating|float)|round(2) }}/5</span>
+                        </div>
+                        <a href="https://www.google.com/maps/?q={{ rec.latitude }},{{ rec.longitude }}" 
+                           target="_blank" class="view-map">View on Map 🗺️</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">📭</div>
+            <h2>No Recommendations Found</h2>
+            <p>Try adjusting your filters or selecting a different user.</p>
+            <a href="/" class="back-link" style="margin-top: 20px;">Back to Search</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -6,6 +6,9 @@ app = Flask(__name__)
 # Load the CSV data into a DataFrame
 data = pd.read_csv('../dataset/data4.csv')
 
+available_cities = sorted(data['url'].dropna().str.split('/').str[2].unique().tolist())
+available_categories = sorted(data['category'].dropna().unique().tolist())
+
 # Function to recommend places based on city and preferences
 def recommend_places(city, preferences):
     # Filter data based on city by extracting from URL
@@ -23,12 +26,12 @@ def recommend_places(city, preferences):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', cities=available_cities, categories=available_categories)
 
 @app.route('/recommendations', methods=['POST'])
 def get_recommendations():
     city = request.form['city'].strip().lower()
-    preferences = request.form['preferences'].strip().split(',')
+    preferences = request.form.getlist('preferences')
     
     # Get recommendations
     recommendations = recommend_places(city, preferences)

@@ -5,90 +5,321 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Recommendations</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        :root {
+            --bg1: #f8fbff;
+            --bg2: #eef4ff;
+            --surface: rgba(255, 255, 255, 0.9);
+            --text: #162033;
+            --muted: #5f6b7a;
+            --accent: #2563eb;
+            --accent2: #7c3aed;
+            --soft: #edf2ff;
+            --border: rgba(37, 99, 235, 0.12);
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 26%),
+                radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.12), transparent 28%),
+                linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+            padding: 28px 18px 36px;
+        }
+
+        .shell {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 18px;
+            align-items: stretch;
+            margin-bottom: 18px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            box-shadow: 0 20px 50px rgba(16, 32, 51, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-copy {
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-copy::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.08);
+            top: -70px;
+            right: -70px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
         h1 {
-            text-align: center;
-            margin-top: 50px;
-            color: #333;
+            font-size: clamp(2.1rem, 4vw, 3.5rem);
+            line-height: 1.05;
+            margin: 14px 0 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 52ch;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .meta {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+            border-radius: 18px;
+            padding: 14px;
+        }
+
+        .meta strong {
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .meta span {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            padding: 26px;
+        }
+
+        .form-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .form-help {
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 18px;
         }
 
         form {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: grid;
+            gap: 16px;
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
         }
 
         label {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #334155;
         }
 
-        input[type="text"] {
+        select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
+            padding: 13px 14px;
+            border-radius: 14px;
+            border: 1px solid #d6deea;
+            background: #fff;
+            color: #1f2937;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        button[type="submit"] {
-            display: block;
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        }
+
+        .field-note {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        button {
             width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 14px;
+            padding: 15px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
             cursor: pointer;
-            font-size: 16px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            box-shadow: 0 14px 26px rgba(37, 99, 235, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        button[type="submit"]:hover {
-            background-color: #0056b3;
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 30px rgba(37, 99, 235, 0.22);
         }
 
-        fieldset {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            width: 300px;
-            margin: 0 auto;
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
         }
 
-        legend {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        .tip {
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .tip strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .tips,
+            .meta-grid,
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 12px 24px;
+            }
+
+            .hero-copy,
+            .form-card {
+                padding: 20px;
+            }
+
         }
     </style>
 </head>
 <body>
-    <h1>Place Recommendations</h1>
-    <center>
-        <fieldset>
-            <legend>Place Recommendations</legend>
-            <form action="/recommendations" method="post">
-                <label for="city">Enter your preferred city:</label>
-                <input type="text" id="city" name="city" required><br><br>
-                <label for="preferences">Select your preferred categories (comma-separated):</label>
-                <input type="text" id="preferences" name="preferences" required><br><br>
-                <button type="submit">Get Recommendations</button>
-            </form>
-        </fieldset>
-    </center>
+    <div class="shell">
+        <section class="hero">
+            <div class="card hero-copy">
+                <span class="eyebrow">Content Based Recommendations</span>
+                <h1>Find places that match a city and a few interests</h1>
+                <p class="subtitle">
+                    Pick a city and choose one or more categories from the dropdown. The app will rank matching attractions
+                    by rating and review count, so you get a faster and cleaner selection process.
+                </p>
+
+                <div class="meta-grid">
+                    <div class="meta">
+                        <strong>Dropdowns</strong>
+                        <span>No manual typing needed for city or categories.</span>
+                    </div>
+                    <div class="meta">
+                        <strong>Modern flow</strong>
+                        <span>Quick selection, cleaner form, easier scanning on mobile and desktop.</span>
+                    </div>
+                    <div class="meta">
+                        <strong>Better matching</strong>
+                        <span>Results are sorted by attraction quality and popularity.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card form-card">
+                <h2>Get recommendations</h2>
+                <p class="form-help">Choose a city, then select one or more categories that interest you.</p>
+
+                <form action="/recommendations" method="post">
+                    <div class="field">
+                        <label for="city">Preferred city</label>
+                        <select id="city" name="city" required>
+                            <option value="">Select a city</option>
+                            {% for city in cities %}
+                            <option value="{{ city }}">{{ city.title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="preferences">Preferred categories</label>
+                        <select id="preferences" name="preferences" class="categories" multiple required>
+                            {% for category in categories %}
+                            <option value="{{ category }}">{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="field-note">Hold Ctrl or Cmd to select multiple categories from the dropdown.</div>
+                    </div>
+
+                    <button type="submit">Show Recommendations</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="tips">
+            <div class="tip">
+                <strong>Tip 1</strong>
+                If you want broader results, choose categories like Heritage, Nature, or Scenic.
+            </div>
+            <div class="tip">
+                <strong>Tip 2</strong>
+                City selection narrows the recommendation pool and makes the output more focused.
+            </div>
+            <div class="tip">
+                <strong>Tip 3</strong>
+                You can select multiple categories to mix interests in one search.
+            </div>
+        </section>
+    </div>
 </body>
 </html>
